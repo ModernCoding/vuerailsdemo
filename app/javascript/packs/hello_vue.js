@@ -10,7 +10,6 @@ import VueRouter from 'vue-router'
 import VueResource from 'vue-resource'
 
 import App from '../app.vue'
-import Toto from '../toto.vue'
 
 
 Vue.use(VueRouter)
@@ -23,12 +22,17 @@ const router = new VueRouter({
         {
             path: '/',
             name: 'app',
-            component: App
+            component: () => import('../app.vue')
         },
         {
-            path: '/toto',
+            path: '/totos',
             name: 'toto',
-            component: Toto
+            component: () => import('../toto.vue')
+        },
+        {
+            path: '/titis',
+            name: 'titi',
+            component: () => import('../titi.vue')
         }
     ]
 });
@@ -39,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
     render: h => h(App)
   }).$mount()
   // document.body.appendChild(app.$el)
-  document.getElementById('app').appendChild(app.$el)
+  document.body.appendChild(app.$el)
 
   console.log(app)
 })

@@ -1,9 +1,10 @@
 <template>
-  <div id="app">
+  <div>
     <p>{{ message }}</p>
     <p>
-      <router-link :to="{ name: 'app' }">App</router-link> |
+      <router-link :to="{ name: 'app' }">App</router-link>
       <router-link :to="{ name: 'toto' }">Toto</router-link>
+      <router-link :to="{ name: 'titi' }">Titi</router-link>
     </p>
     <router-view></router-view>
   </div>
@@ -12,7 +13,6 @@
 <script>
 export default {
   data: function () {
-    this.$http.get('/totos').then(function(response){ console.log(response)})
     return {
       message: "Hello Vue!"
     }
