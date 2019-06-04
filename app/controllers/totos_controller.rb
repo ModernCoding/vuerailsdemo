@@ -5,7 +5,7 @@ class TotosController < ApplicationController
   # GET /totos.json
   def index
     p "DANS LE PLACARD!"
-    @totos = Toto.all
+    render :json => Toto.all
   end
 
   # GET /totos/1
