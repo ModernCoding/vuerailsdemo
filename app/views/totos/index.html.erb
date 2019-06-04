@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Totos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Titi</th>
+      <th>Tata</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @totos.each do |toto| %>
+      <tr>
+        <td><%= toto.titi %></td>
+        <td><%= toto.tata %></td>
+        <td><%= link_to 'Show', toto %></td>
+        <td><%= link_to 'Edit', edit_toto_path(toto) %></td>
+        <td><%= link_to 'Destroy', toto, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Toto', new_toto_path %>
