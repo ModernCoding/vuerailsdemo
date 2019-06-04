@@ -26,7 +26,7 @@ const router = new VueRouter({
             component: App
         },
         {
-            path: '/totos',
+            path: '/toto',
             name: 'toto',
             component: Toto
         }
